@@ -1,8 +1,10 @@
-module ucr.laboratory3 {
+module ucr.lab {
     requires javafx.controls;
     requires javafx.fxml;
 
 
-    opens ucr.laboratory3 to javafx.fxml;
-    exports ucr.laboratory3;
+    opens ucr.lab to javafx.fxml;
+    exports ucr.lab;
+    exports controller;
+    opens controller to javafx.fxml;
 }
