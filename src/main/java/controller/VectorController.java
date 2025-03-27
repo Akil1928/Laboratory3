@@ -15,8 +15,7 @@ public class VectorController {
         this.alert = util.FXUtility.myalert("Vector Algorit", "");
         alert.setAlertType(Alert.AlertType.ERROR);
     }
-    @FXML
-    private TextArea textArea;
+
 
     @FXML
     private TextField textfFiel;
@@ -29,7 +28,7 @@ public class VectorController {
         int n = Integer.valueOf(this.nTExtField.getText());
         if (isValid(n)){
             this.vector = new Vector(n);
-            this.textArea.setText("El vector has been created for"+n+" elements");
+
     }else{
 
 }
