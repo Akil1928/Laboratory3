@@ -31,7 +31,7 @@
                   <Font name="Arial Black" size="20.0" />
                </font>
             </TextField>
-            <Button layoutX="293.0" layoutY="17.0" mnemonicParsing="false" onAction="#createOnAction" text="Create">
+            <Button layoutX="300.0" layoutY="-1.0" mnemonicParsing="false" onAction="#createOnAction" text="Create">
                <font>
                   <Font size="15.0" />
                </font>
@@ -45,46 +45,22 @@
       </Pane>
       <Pane layoutY="327.0" prefHeight="172.0" prefWidth="600.0">
          <children>
-            <Button layoutY="16.0" mnemonicParsing="false" text="Fill/Show">
+            <Button layoutY="16.0" mnemonicParsing="false" onAction="#fillShowOnAction" text="Fill/Show" />
+            <Button layoutX="240.0" layoutY="16.0" mnemonicParsing="false" onAction="#addByValueOnAction" text="Add by value" />
+            <Button layoutX="462.0" layoutY="67.0" mnemonicParsing="false" onAction="#addByIndexOnAction" text="Add by index">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="125.0" layoutY="16.0" mnemonicParsing="false" text="Add by value">
+            <Button layoutX="527.0" layoutY="16.0" mnemonicParsing="false" onAction="#sizeOnAction" text="Size">
                <font>
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button layoutX="397.0" layoutY="68.0" mnemonicParsing="false" text="Add by index">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="478.0" layoutY="16.0" mnemonicParsing="false" text="Size">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="278.0" layoutY="16.0" mnemonicParsing="false" text="Remote by value">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button layoutY="68.0" mnemonicParsing="false" text="Remove by index">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="170.0" layoutY="67.0" mnemonicParsing="false" text="Contains">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
-            <Button layoutX="286.0" layoutY="68.0" mnemonicParsing="false" text="Clean">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
+            <Button layoutX="372.0" layoutY="126.0" mnemonicParsing="false" onAction="#remoteByValueOnAction" text="Remote by value" />
+            <Button layoutY="68.0" mnemonicParsing="false" onAction="#removeByIndex" text="Remove by index" />
+            <Button layoutX="93.0" layoutY="126.0" mnemonicParsing="false" onAction="#containsOnAction" text="Contains" />
+            <Button layoutX="290.0" layoutY="68.0" mnemonicParsing="false" onAction="#cleanOnAction" text="Clean" />
          </children>
       </Pane>
    </children>

@@ -34,6 +34,21 @@ public class Vector implements VectorInterface{
 
     @Override
     public boolean contains(Object element) {//tiene que ordenar el arreglo con busqueda binaria
+        int target = (int)element;
+        int left = 0;
+        int right = counter - 1;
+
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (data[mid] == target) {
+                return true;
+            }
+            if (data[mid] < target) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
         return false;
     }
 
@@ -58,13 +73,36 @@ public class Vector implements VectorInterface{
     @Override
     public boolean remove(Object element) {
 
+        for (int i = 0; i < counter; i++) {
+            if (data[i] == (int)element) {
+                // Mover elementos a la izquierda para llenar el espacio
+                for (int j = i; j < counter - 1; j++) {
+                    data[j] = data[j + 1];
+                }
+                counter--;
+                return true;
+            }
+        }
         return false;
     }
 
     @Override
     public Object remove(int index) {//Removerlo con la busqueda binaria que indica la posicion y se suprime con lo que esta a la derecha y todos se van moviendo asi hasta el final
 
-        return null;
+        if (index < 0 || index >= counter) {
+            return null;
+        }
+
+        // Guardar elemento a eliminar
+        int removedElement = data[index];
+
+        // Mover elementos a la izquierda
+        for (int i = index; i < counter - 1; i++) {
+            data[i] = data[i + 1];
+        }
+
+        counter--;
+        return removedElement;
     }
 
     @Override
@@ -74,12 +112,20 @@ bubbleSort(this.data, counter);
 
     @Override
     public int indexOf(Object element) {
-        return 0;
+        for (int i = 0; i < counter; i++) {
+            if (data[i] == (int)element) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override
     public Object get(int index) {
-        return null;
+        if (index < 0 || index >= counter) {
+            return null;
+        }
+        return data[index];
     }
     public void fill() {
         util.Utility.fill(this.data);
@@ -108,6 +154,14 @@ bubbleSort(this.data, counter);
                 break;
         }
     }
-
+    @Override
+    public String toString() {
+        // Mostrar contenido del vector
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < counter; i++) {
+            sb.append(data[i]).append(" ");
+        }
+        return sb.toString().trim();
+    }
 
 }

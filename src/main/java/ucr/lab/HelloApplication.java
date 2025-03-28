@@ -20,7 +20,7 @@ public class HelloApplication extends Application {
         String css = Objects.requireNonNull(getClass().getResource("/stylesheet.css")).toExternalForm();
         scene.getStylesheets().add(css);
 
-        stage.setTitle("Laboratory No. 2");
+        stage.setTitle("Laboratory No. 3");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
