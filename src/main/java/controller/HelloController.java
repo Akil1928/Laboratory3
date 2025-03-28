@@ -60,7 +60,7 @@ public class HelloController {
 
     @FXML
     void probabilisticOnAction(ActionEvent event) {
-
+load("probabilistic.fxml");
     }
 
     @FXML
