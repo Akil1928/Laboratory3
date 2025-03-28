@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import domain.Vector;//NUestra clase vector
+import domain.Vector;
 import util.Utility;
 
 public class VectorController {
@@ -17,10 +17,12 @@ public class VectorController {
     @FXML
     private TextArea textArea;
 
+    @FXML
     public void initialize() {
         this.alert = util.FXUtility.myalert("Vector Algorithm", "");
         alert.setAlertType(Alert.AlertType.INFORMATION);
     }
+
     private void showMessage(String message) {
         textArea.setText(message);
         alert.setContentText(message);
@@ -32,7 +34,12 @@ public class VectorController {
         alert.setAlertType(Alert.AlertType.ERROR);
         alert.setContentText(message);
         alert.show();
-        alert.setAlertType(Alert.AlertType.INFORMATION); // Restaurar al tipo original
+        alert.setAlertType(Alert.AlertType.INFORMATION);
+    }
+
+    @FXML
+    void textFieldOnAction(ActionEvent event) {
+        // Puedes agregar lógica aquí si necesitas acción al presionar Enter
     }
 
     @FXML
@@ -41,9 +48,7 @@ public class VectorController {
             showError("Primero cree un vector");
             return;
         }
-
         try {
-            // Agregar valor en posición intermedia
             int index = vector.size() / 2;
             int value = Utility.random(100);
             vector.add(index, value);
@@ -59,8 +64,6 @@ public class VectorController {
             showError("Primero cree un vector");
             return;
         }
-
-        // Agregar un valor aleatorio
         int value = Utility.random(100);
         vector.add(value);
         showMessage("Valor agregado: " + value);
@@ -72,7 +75,6 @@ public class VectorController {
             showError("Primero cree un vector");
             return;
         }
-
         vector.clear();
         showMessage("Vector limpiado");
     }
@@ -83,8 +85,6 @@ public class VectorController {
             showError("Primero cree un vector");
             return;
         }
-
-        // Buscar un valor aleatorio existente
         if (vector.size() > 0) {
             int index = Utility.random(vector.size());
             int valueToFind = (int) vector.get(index);
@@ -116,13 +116,9 @@ public class VectorController {
             showError("Primero cree un vector");
             return;
         }
-
-        // Llenar vector con valores aleatorios
         for (int i = 0; i < vector.getData().length; i++) {
-            vector.add(Utility.random(100)); // Valores aleatorios entre 0 y 99
+            vector.add(Utility.random(100));
         }
-
-        // Mostrar contenido
         showMessage("Vector lleno: " + vector.toString());
     }
 
@@ -132,9 +128,7 @@ public class VectorController {
             showError("Primero cree un vector");
             return;
         }
-
         if (vector.size() > 0) {
-            // Eliminar un valor existente
             int index = Utility.random(vector.size());
             int valueToRemove = (int) vector.get(index);
             Object removed = vector.remove(valueToRemove);
@@ -145,14 +139,12 @@ public class VectorController {
     }
 
     @FXML
-    void removeByIndex(ActionEvent event) {
+    void removeByIndexOnAction(ActionEvent event) {
         if (vector == null) {
             showError("Primero cree un vector");
             return;
         }
-
         try {
-            // Eliminar último elemento
             int index = vector.size() - 1;
             Object removed = vector.remove(index);
             showMessage("Elemento eliminado de la posición " + index + ": " + removed);
@@ -167,12 +159,6 @@ public class VectorController {
             showError("Primero cree un vector");
             return;
         }
-
         showMessage("Tamaño del vector: " + vector.size());
-    }
-
-    @FXML
-    void textfielOnAction(ActionEvent event) {
-
     }
 }

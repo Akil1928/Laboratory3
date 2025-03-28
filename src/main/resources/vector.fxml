@@ -26,7 +26,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
-            <TextField fx:id="textfFiel" layoutX="201.0" layoutY="8.0" onAction="#textfielOnAction" prefHeight="36.0" prefWidth="73.0">
+            <TextField fx:id="textField" layoutX="201.0" layoutY="8.0" onAction="#textFieldOnAction" prefHeight="36.0" prefWidth="73.0">
                <font>
                   <Font name="Arial Black" size="20.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <TextArea fx:id="textArea" layoutY="50.0" prefHeight="211.0" prefWidth="600.0">
+            <TextArea fx:id="textArea" editable="false" layoutY="50.0" prefHeight="211.0" prefWidth="600.0">
                <font>
                   <Font size="30.0" />
                </font>
@@ -58,7 +58,7 @@
                </font>
             </Button>
             <Button layoutX="372.0" layoutY="126.0" mnemonicParsing="false" onAction="#remoteByValueOnAction" text="Remote by value" />
-            <Button layoutY="68.0" mnemonicParsing="false" onAction="#removeByIndex" text="Remove by index" />
+            <Button layoutY="68.0" mnemonicParsing="false" onAction="#removeByIndexOnAction" text="Remove by index" />
             <Button layoutX="93.0" layoutY="126.0" mnemonicParsing="false" onAction="#containsOnAction" text="Contains" />
             <Button layoutX="290.0" layoutY="68.0" mnemonicParsing="false" onAction="#cleanOnAction" text="Clean" />
          </children>
